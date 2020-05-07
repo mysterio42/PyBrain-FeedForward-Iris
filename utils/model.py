@@ -6,8 +6,7 @@ from pybrain.utilities import percentError
 
 def train_model(train_data, test_data, epochs=1000, hidden_dim=7, lr=0.05, momentum=0.01):
     net = buildNetwork(train_data.indim, hidden_dim, train_data.outdim, outclass=SoftmaxLayer)
-    print(net)
-    input('---------')
+
     trainer = BackpropTrainer(net, dataset=train_data, momentum=momentum, learningrate=lr, verbose=True)
     trainer.trainEpochs(epochs)
 
